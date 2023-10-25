@@ -1,0 +1,8 @@
+sort1 uses: bubble
+How do you know?: To me, the easiest way to weed out bubble sort would be to compare a sorted run to a sorted run with the first and last number switched, and the sort with the highest discrepancy between the two would have to be bubble sort because it will terminate after not switch anything in a sorted run, but loop through everything n times if the two end values were switched.
+
+sort2 uses: merge
+How do you know?: After figuring out bubble sort, figuring out the other two is easy. Merge sort is faster than selection sort as it is time complexity of nlogn
+
+sort3 uses: selection
+How do you know?: where selection sort is n^2. So because merge will always be faster than selection, sort2 must be merge and sort3 must be selection.

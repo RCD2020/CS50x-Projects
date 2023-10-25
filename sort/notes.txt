@@ -1,0 +1,28 @@
+sort1 uses: TODO
+rand50000: 5.635s
+sorted50000: .435s
+fakeout: 2.456s
+reversed50000: 5.846s
+rand10000: .190s
+How do you know?: TODO
+
+sort2 uses: TODO
+rand50000: .532s
+sorted50000: .498s
+fakeout: .534s
+reversed50000: .449s
+rand10000: .059s
+How do you know?: TODO
+
+sort3 uses: TODO
+rand50000: 2.473s
+sorted50000: 2.292s
+fakeout: 2.162s
+reversed: 2.445s
+rand10000: .109s
+How do you know?: TODO
+
+
+selection: best O(n^2)
+bubble: best O(n)
+merge: best O(n log n)

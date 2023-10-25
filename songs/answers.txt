@@ -1,0 +1,3 @@
+If I were to create an 'Audio Aura', I would use the average energy, danceability, and valence, but would also like to somehow incorporate the genre into the mix as well.
+
+This may not be the best way to do it, as there may be songs who's genre or energy conflict with the message they are conveying.

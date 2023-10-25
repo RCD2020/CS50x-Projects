@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ data['name'] }}
+{% endblock %}
+
+{% block main %}
+    <h1>{{ data['name'] }}</h1>
+    <h3>{{ "$%.2f"|format(data['price']) }}</h3>
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Evaluates questsions that are multiple choice
+            function multValuate(id, value)
+            {
+                let button = document.getElementById(id);
+                button.disabled = true;
+                let color;
+                let text;
+                if (value)
+                {
+                    color = '#aaffaa';
+                    text = 'Correct';
+                }
+                else
+                {
+                    color = '#ffaaaa';
+                    text = 'Incorrect';
+                }
+                button.style.backgroundColor = color;
+                document.getElementById(id.slice(0,2)).innerHTML = text;
+            }
+
+            // Evaluates questions that you type out
+            function textValuate(id)
+            {
+                let input = document.getElementById(id + 'answer');
+
+                document.getElementById(id + 'submit').disabled = true;
+                document.getElementById(id + 'answer').disabled = true;
+
+                let text;
+                let color;
+                if (input.value.toLowerCase().includes('yellow'))
+                {
+                    color = '#aaffaa';
+                    text = 'Correct';
+                }
+                else
+                {
+                    color = '#ffaaaa';
+                    text = 'Incorrect';
+                }
+
+                input.style.backgroundColor = color;
+                document.getElementById(id).innerHTML = text;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the best food maybe ever???????</h3>
+
+                <button id="q1a1" onclick="multValuate('q1a1', false)">Steak</button>
+                <button id="q1a2" onclick="multValuate('q1a2', true)">Pizza</button>
+                <button id="q1a3" onclick="multValuate('q1a3', false)">Nachos</button>
+
+                <h3 id="q1"></h3>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What color is a banana?</h3>
+                <input id="q2answer">
+                <button id="q2submit" type="submit" onclick="textValuate('q2')">Submit</button>
+
+                <h3 id="q2"></h3>
+            </div>
+        </div>
+    </body>
+</html>

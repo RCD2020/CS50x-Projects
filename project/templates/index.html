@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="wrapper">
+    <div class="imageContainer">
+        <img src="/static/examples/tajmahal.png" alt="Taj Mahal, grayscaled">
+        <img src="/static/examples/piza.png" alt="Tower of Piza, sepia toned">
+        <img src="/static/examples/eiffel.png" alt="Eiffel Tower, Sobel's edge detection">
+        <img src="/static/examples/pyramid.png" alt="Ancient Mayan settlement Chichen-Itza, grayscaled">
+        <img src="/static/examples/giza.png" alt="The pyramid Giza, sepia toned">
+        <img src="/static/examples/watgetty.png" alt="Angkor Wat, Sobel's edge detection">
+    </div>
+</div>
+
+<h1>Upload New File</h1>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+
+{% endblock %}

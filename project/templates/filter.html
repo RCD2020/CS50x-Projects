@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<!-- Code Mirror -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.js" integrity="sha512-4i/wqLBUQRN1JXTwHTYjnZXUVi57tiOAMehaWWLqCXJpaIz9tgtOKJuEPUuBZ0+G7Bh/XJIsU/+gTCHBOWlFTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.css" integrity="sha512-7vaQ4LLdaXd2IuMd4MUQ6LRFIGbEwJI1aq6KYqL3RjbdQyUkRFhwZKmqmkBXurTFdGlx687lTN8FSJfX6Df8Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="/static/js/filtered.js" defer></script>
+{% endblock %}
+
+
+{% block body %}
+
+<img src="/static/images/source/{{ path }}" height="{{ height }}" width="{{ width }}">
+
+<br>
+
+<a href="/">Home</a>
+
+<br>
+<br>
+<form method="post" action="/filtered">
+    <input type="hidden" name="filename" value="{{ path }}">
+    <textarea name="filter-text" id="code"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+<h2>Common Filters</h2>
+
+<h3>Grayscale</h3>
+<img src="/static/examples/tajmahal.png" alt="Taj Mahal, grayscaled">
+<img src="/static/examples/pyramid.png" alt="Chichen-Itza, grayscaled">
+
+<br>
+
+<button onclick="grayscale()">Try it!</button>
+
+<p>In order to grayscale an image, what you must do is get the average
+of the rgb values across the pixel, and then apply the average to r,
+g, and b</p>
+
+
+<h3>Sepia Tone</h3>
+<img src="/static/examples/piza.png" alt="Tower of Piza, sepia toned">
+<img src="/static/examples/giza.png" alt="the pyramid Giza, sepia toned">
+
+<br>
+
+<button onclick="sepia()">Try it!</button>
+
+<p>In order to make an image appear sepia toned, we use an algorithm
+that uses math to alter our rgb values to have that brownish hue.</p>
+
+
+<h3>Sobel's Edge Detection</h3>
+<img src="/static/examples/eiffel.png" alt="Eiffel Tower, Sobel's edge detection">
+<img src="/static/examples/watgetty.png" alt="Angkor Wat, Sobel's edge detection">
+
+<br>
+
+<button onclick="sobel()">Try it!</button>
+
+<p><a href="https://en.wikipedia.org/wiki/Sobel_operator">The Sobel operator</a>
+is an edge detection algorithm. Using it, we can adjust the brightness
+of each pixel according to how much it seems to be an edge.</p>
+
+{% endblock %}
